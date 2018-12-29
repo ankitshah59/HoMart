@@ -1,0 +1,46 @@
+<!--
+  Generated template for the NotifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+
+    <ion-title>~ HoMart ~</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header color="primary">
+          <ion-item-divider color="light">
+              <ion-icon name="cart" color="danger"></ion-icon>
+    
+              <b><i>Shopping List</i></b>
+              
+          </ion-item-divider>
+          <hr>
+        </ion-card-header>
+    
+     <ion-list inset>
+
+       <div *ngFor="let display of arr">
+         <ion-item>
+      <h2>{{display}} </h2>
+    </ion-item>
+  </div>
+
+     </ion-list>
+
+
+    </ion-card>
+
+
+
+
+</ion-content>

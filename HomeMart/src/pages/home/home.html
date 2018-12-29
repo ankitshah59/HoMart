@@ -1,0 +1,183 @@
+<!-- <ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      HoMart- Grocery Notifier
+    </ion-title>
+    <ion-icon right name="home"></ion-icon>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle color="primary">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>~ HoMart ~</ion-title>
+      
+      <ion-buttons end>
+            <button ion-button icon-only color="dark" [hidden]="showRedButtonAtTop">
+            <ion-icon name="notifications-outline"></ion-icon>
+          </button>
+
+          <button ion-button icon-only color="secondary" [hidden]="!showRedButtonAtTop" (click)="updateGroceries()" >
+              <ion-icon name="notifications"></ion-icon>
+          </button>
+
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <!-- <ion-card>
+    <ion-card-header color="primary"><b>Shopping List</b></ion-card-header>
+    <ion-list>
+      <h2> {{nameType1}}: {{sensor1}}</h2>
+      <h2> Sensor2: {{sensor2}}</h2>
+    </ion-list>
+  </ion-card> -->
+<div class="curvy">
+  <ion-card>
+    <ion-card-header color="primary">
+      <ion-item-divider color="light">
+          <ion-icon name="cart"></ion-icon>
+
+          <b><i>Grocery List</i></b>
+          
+      </ion-item-divider>
+      <hr>
+    </ion-card-header>
+
+  <ion-list inset>
+
+      <!-- <ion-item>
+          <h2>{{nameType1}} : {{sensor1}}</h2>
+          <button ion-button clear item-end (click)="prompt('sensor1')">
+              <ion-icon name="create-outline" color="dark"></ion-icon>
+          </button>
+    
+          <button ion-button clear item-end (click)="promptThreshold('sensor01')">
+              <ion-icon name="funnel" color="dark"></ion-icon>
+          </button>
+    
+        </ion-item> -->
+
+    <ion-item>
+
+        <!-- <ion-select [(ngModel)]='selected'>
+            <ion-option (ionSelect)="print($event)">ml</ion-option>
+            <ion-option (ionSelect)="print($event)">L</ion-option>
+            <ion-option (ionSelect)="print($event)"> Kg</ion-option>
+            <ion-option>g</ion-option>
+            <ion-option>lbs</ion-option>
+            <ion-option>Oz</ion-option>
+        </ion-select> -->
+
+      <h2>{{nameType1}} : {{sensor1}}</h2>
+
+      
+      <button ion-button item-end (click)="prompt('sensor1')">
+          <ion-icon name="create" color="dark"></ion-icon>
+      </button>
+    
+      <button ion-button item-end (click)="promptThreshold('sensor01')">
+          <ion-icon name="funnel" color="dark"></ion-icon>
+      </button>
+
+    </ion-item>
+    
+    <ion-item>
+      <h2>{{nameType2}} : {{sensor2}}</h2>
+      <button ion-button item-end (click)="prompt('sensor2')">
+          <ion-icon name="create" color="dark"></ion-icon>
+      </button>
+
+      <button ion-button item-end (click)="promptThreshold('sensor02')">
+          <ion-icon name="funnel" color="dark"></ion-icon>
+      </button>
+
+    </ion-item>
+
+    <ion-item>
+
+        <h2>{{nameType3}} : {{sensor3}}</h2>
+        <button ion-button item-end (click)="prompt('sensor3')">
+            <ion-icon name="create" color="dark"></ion-icon>
+        </button>
+
+        <button ion-button item-end (click)="promptThreshold('sensor03')">
+            <ion-icon name="funnel" color="dark"></ion-icon>
+        </button>
+
+      </ion-item>
+  
+      <ion-item>
+        <h2>{{nameType4}} : {{sensor4}}</h2>
+        <button ion-button item-end (click)="prompt('sensor4')">
+            <ion-icon name="create" color="dark"></ion-icon>
+        </button>
+        <button ion-button item-end (click)="promptThreshold('sensor04')">
+            <ion-icon name="funnel" color="dark"></ion-icon>
+        </button>
+
+      </ion-item>
+
+      <ion-item>
+          <h2>{{nameType5}} : {{sensor5}}</h2>
+          <button ion-button  item-end (click)="prompt('sensor5')">
+              <ion-icon name="create" color="dark"></ion-icon>
+          </button>
+          <button ion-button  item-end (click)="promptThreshold('sensor05')">
+              <ion-icon name="funnel" color="dark"></ion-icon>
+          </button>
+
+        </ion-item>
+
+  </ion-list>
+</ion-card>
+</div>
+
+<ion-card>
+    <ion-card-header color="primary">
+      <ion-item-divider color="light">
+          <ion-icon name="flash"></ion-icon>
+          <b><i>Kitchen Appliance</i></b>
+          <hr>
+      </ion-item-divider>
+     
+    </ion-card-header>
+ 
+  <button ion-button  (click)="on()" icon-end round>
+      ON
+      <ion-icon name="bulb" color="secondary"></ion-icon>
+    </button>
+    <button ion-button (click)="off()" icon-end round end>
+        OFF
+        <ion-icon name="bulb"></ion-icon>
+      </button>
+
+</ion-card>
+
+<ion-fab right bottom>
+    <button ion-fab mini color='danger'><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+
+  <!-- <div *ngFor="let display of test">
+    <p>{{display.title}}</p>
+  </div> -->
+  
+
+  <!-- button-ios-dark, .toolbar-ios-primary .bar-button-clear-ios-dark {
+    color: #d63434;
+    background-color: transparent;
+} -->
+  
+
+</ion-content>
